@@ -11,8 +11,8 @@ class AddTodo extends Component {
   render() {
     return (
       <div className="AddTodo">
-        <input type="text" value={this.state.inputValue} onChange={evt => this.updateInputValue(evt)} />
-        <button onClick={() => this.addItem()}>+</button>
+        <input required="required" type="text" value={this.state.inputValue} onChange={evt => this.updateInputValue(evt)} />
+        {this.state.inputValue.length ? <button onClick={() => this.addItem()}>+</button> : '' }
       </div>
     );
   }

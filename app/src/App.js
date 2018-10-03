@@ -37,11 +37,13 @@ class App extends Component {
   }
 
   addItem(item) {
-    let newList = this.state.list
-    newList.push(item)
-    this.setState({
-      list: newList,
-    })
+    if (item.length) {
+      let newList = this.state.list
+      newList.push(item)
+      this.setState({
+        list: newList,
+      })
+    }
   }
 
   clearAll() {
